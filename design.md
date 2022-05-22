@@ -8,7 +8,7 @@
 - Liability account to expense accounts
 
 2) Resolve destination account by fuzzy matching transaction description
-3) Resolve destination account by matching transaction amount and description
+3) Resolve destination account by matching transaction value and description
 
 # Design
 
@@ -25,8 +25,18 @@ A simple annotation for `Expenses:Eating Out` account describing the keywords to
 allow list of the souce accounts.
 ```
 ---
-keywords: chats, dinner, breakfast, snacks
 account_source: Assests:CurrentAssets:Savings:BankFoo, Liabilities:CreditCards:BankBaz
+keywords: chats, dinner, breakfast, snacks
+---
+```
+Sample annotation for a recurring deposit account
+```
+---
+account_source: Assets:CurrentsAssets:Savings:BankFoo
+currency: INR  ## TODO: Check if this info is already present as part of GNUCash account
+keywords: fund, contribution
+value_min: 2500
+value_max: 2500
 ---
 ```
 If a transaction gets resolved to two or more destination accounts, the allow list can be used to further filter the results.
@@ -42,14 +52,14 @@ The annotations for these accounts
 ```
 # Annotation for Assests:CurrentAssets:Savings:BankBaz
 ---
-keywords: education
 account_source: Assets:CurrentAssets:Savings:BankFoo
+keywords: education
 ---
 
 # Annotation for Assets:Investments:Educations Goal:Mutual Funds: FundFoo
 ---
-keywords: education
 account_source: Assets:CurrentAssets:Savings:BankBaz
+keywords: education
 ---
 ```
 
