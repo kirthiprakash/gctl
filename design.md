@@ -9,6 +9,8 @@
 
 2) Resolve destination account by fuzzy matching transaction description
 3) Resolve destination account by matching transaction value and description
+4) When resolving the transactions to mutual funds, account for stamp duty and taxes
+5) Reconcilliation status of transaction should be set to `n`
 
 # Design
 
