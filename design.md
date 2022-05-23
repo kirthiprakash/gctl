@@ -18,7 +18,7 @@
 
 A mapping between the transaction description and destination account is required to match a transaction to its destination account.
 GNUcash accounts can be are annotated with meta data which can help resolve the transactions. The annotations can be stored as account 
-descriptions in GNUcash account. The annotations can be stored either in FrontMatter, Yaml or JSON.
+descriptions in GNUcash account. The annotations can be stored in FrontMatter format.
 A reverse search index is built from the keywords in the annotations which can be used to resovle the destination account from the keywords
 in the transaction description.
 
@@ -64,5 +64,9 @@ account_source: Assets:CurrentAssets:Savings:BankBaz
 keywords: education
 ---
 ```
+### Rationale for FrontMatter format
+Metadata could be stored in other popular formats like JSON or YAML too but it has its limitations. First of all, we are repurposing a field in GNUcash Account model which it was not desgined for. The `description` field should still allow adding description along with metadata.
+FrontMatter supports metadata followed by free text which can be used for adding description.
+If one doesn't want to use `gnucash-cmd` tool and not have any configs related to the tool in the GNUCash account description, they have to just remove the FrontMatter content.
 
 
