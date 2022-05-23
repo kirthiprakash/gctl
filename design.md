@@ -70,3 +70,18 @@ FrontMatter supports metadata followed by free text which can be used for adding
 If one doesn't want to use `gnucash-cmd` tool and not have any configs related to the tool in the GNUCash account description, they have to just remove the FrontMatter content.
 
 
+### Resolving accounts at parent and children level
+```
+Expenses:Groceries:Misc
+Expenses:Medical:Misc
+Expenses:Medical:Self
+Expenses:Medical:Spouse
+Expenses:Medical:Parents
+Expenses:Medical:Kids
+Expenses:Gifts:Kids
+Expenses:Gits:Misc
+Expenses:Gifts:Spouse
+Expenses:Gifts:Family and Friends
+Expenses:Gifts:Parents
+```
+> TODO: design for account resolution with nested accounts (with similar leaf account names)
